@@ -1,0 +1,132 @@
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" [routerLink]="employee">Employee <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="login">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="signup">SignUp</a>
+        </li>
+      </ul>
+    </div>
+  </nav> -->
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+   
+    <title>housing</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+    body {
+      font: 20px Montserrat, sans-serif;
+      line-height: 1.8;
+      color: #f5f6f7;
+    }
+    p {font-size: 16px;}
+    .margin {margin-bottom: 45px;}
+    .bg-1 {
+      background-color: #1abc9c; /* Green */
+      color: #ffffff;
+    }
+    .bg-2 {
+      background-color: #474e5d; /* Dark Blue */
+      color: #ffffff;
+    }
+    .bg-3 {
+      background-color: #ffffff; /* White */
+      color: #555555;
+    }
+    .bg-4 {
+      background-color: #2f2f2f; /* Black Gray */
+      color: #fff;
+    }
+    .container-fluid {
+      padding-top: 70px;
+      padding-bottom: 70px;
+    }
+    .navbar {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      border: 0;
+      border-radius: 0;
+      margin-bottom: 0;
+      font-size: 12px;
+      letter-spacing: 5px;
+    }
+    .navbar-nav  li a:hover {
+      color: #1abc9c !important;
+    }
+    </style>
+  </head>
+  <body>
+   
+  <!-- Navbar -->
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+        </button>
+        <a class="navbar-brand" href="#">HOUSING APP</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/signup">Sign-up</a></li>
+          <li><a href="/login">Login</a></li>
+          <!-- <li><a href="#">WHERE</a></li> -->
+        </ul>
+      </div>
+    </div>
+  </nav>
+   
+  <!-- First Container -->
+  <div class="container-fluid bg-1 text-center">
+    <h3 class="margin">MIGRATE</h3>
+    <img src="https://th.bing.com/th?q=House+Outline+Logo&w=120&h=120&c=1&rs=1&qlt=90&cb=1&dpr=1.5&pid=InlineBlock&mkt=en-IN&cc=IN&setlang=en&adlt=strict&t=1&mw=247" class="img-responsive img-circle margin" style="display:inline" alt="house" width="350" height="350">
+    <h3>Migrate House</h3>
+  </div>
+   
+  <!-- Second Container -->
+  <div class="container-fluid bg-2 text-center">
+    <h3 class="margin">What Am I?</h3>
+    <p>Mercer provide a migration option for their employees  </p>
+    <a href="#" class="btn btn-default btn-lg">
+      <span class="glyphicon glyphicon-search"></span> Search
+    </a>
+  </div>
+   
+  <!-- Third Container (Grid) -->
+  <div class="container-fluid bg-3 text-center">    
+    <h3 class="margin">Where To Find Me?</h3><br>
+    <div class="row">
+      <div class="col-sm-4">
+        <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> -->
+        <img src="https://th.bing.com/th/id/OIP.NA_ioHM6f6b1oDqB6rlOKQHaHH?pid=ImgDet&rs=1" class="img-responsive margin" style="width:100%" alt="Image">
+        <p>Mercer in United States</p>
+      </div>
+      <div class="col-sm-4">
+        <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> -->
+        <img src="https://c8.alamy.com/comp/W9H4RB/marsh-mclennan-companies-logo-atop-of-their-building-in-downtown-toronto-W9H4RB.jpg" class="img-responsive margin" style="width:100%" alt="Image">
+        <p>Mercer in Australia</p>
+      </div>
+      <div class="col-sm-4">
+        <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> -->
+        <img src="https://live.staticflickr.com/7165/6573828273_8dcdab7d35_b.jpg" class="img-responsive margin" style="width:100%" alt="Image">
+        <p> Mercer in Gurugram</p>
+      </div>
+    </div>
+  </div>
+   
+  </body>
+  </html>

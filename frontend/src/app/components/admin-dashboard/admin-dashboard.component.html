@@ -1,0 +1,44 @@
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Username</th>
+      <th>Email</th>
+      <th>Country</th>
+      <th>County</th>
+      <th>Area</th>
+      <th>Organization</th>
+      <th>Current Location</th>
+      <th>House Type</th>
+      <th>House Size</th>
+      <th>Rent</th>
+      <th>Cost</th>
+      <th>Rent Tenure</th>
+      <th>Role</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employeeDetails">
+      <td>{{ employee.username }}</td>
+      <td>{{ employee.email }}</td>
+      <td>{{ employee.country }}</td>
+      <td>{{ employee.county }}</td>
+      <td>{{ employee.area }}</td>
+      <td>{{ employee.organization }}</td>
+      <td>{{ employee.currentLocation }}</td>
+      <td>{{ employee.houseType }}</td>
+      <td>{{ employee.houseSize }}</td>
+      <td>{{ employee.rent }}</td>
+      <td>{{ employee.cost }}</td>
+      <td>{{ employee.rentTenure }}</td>
+      <td>{{ employee.role }}</td>
+      <td>
+        <button (click)="editEmployee(employee)">Edit</button>
+      </td>
+      <td>
+        <button (click)="deleteEmployee(employee)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

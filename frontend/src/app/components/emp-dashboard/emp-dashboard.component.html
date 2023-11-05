@@ -1,0 +1,104 @@
+
+<table class="table table-bordered">
+    <thead>
+        <th>
+            Username
+        </th>
+        <th>
+            Email
+        </th>
+        <th>
+            Country
+        </th>
+        <th>
+            County
+        </th>
+        <th>
+            Area
+        </th>
+        <th>
+            Organization
+        </th>
+        <th>
+            Current Location
+        </th>
+        <th>
+            House Type
+        </th>
+        <th>
+            House Size
+        </th>
+        <th>
+            Rent
+        </th>
+        <th>
+            Cost
+        </th>
+        <th>
+            Rent Tenure
+        </th>
+        <th>
+            Rent Receipt
+        </th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                {{dataObj.username}}
+            </td>
+            <td>
+                {{dataObj.email}}
+            </td>
+            <td>
+                {{dataObj.country}}
+            </td>
+            <td>
+                {{dataObj.county}}
+            </td>
+            <td>
+                {{dataObj.area}}
+            </td>
+            <td>
+                {{dataObj.organization}}
+            </td>
+            <td>
+                {{dataObj.currentLocation}}
+            </td>
+            <td>
+                {{dataObj.houseType}}
+            </td>
+            <td>
+                {{dataObj.houseSize}}
+            </td>
+            <td>
+                {{dataObj.rent}}
+            </td>
+            <td>
+                {{dataObj.cost}}
+            </td>
+            <td>
+                {{dataObj.rentTenure}}
+            </td>
+            <td>
+                <button (click)="downloadFile(dataObj.selectedFile.url)">Download Image</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<button (click)="toggleEditForm()">Edit</button>
+ 
+<ng-container *ngIf="showEdit">
+    <form>
+        <div class="form-group">
+          <label>Country</label>
+          <input type="text" [(ngModel)]="dataObj.country" [ngModelOptions]="{standalone: true}"  class="form-control" id="country" [value]="dataObj.country">
+     
+        </div>
+        <button type="submit" class="btn btn-primary mt-4" (click)="editForm()">Submit</button>
+      </form>
+   
+</ng-container>
+<div *ngFor="let item of getObjectKeys(dataObj)">
+    <!-- <p>{{ item }}</p>
+  <p>{{ dataObj[item] }}</p> -->
+  </div>

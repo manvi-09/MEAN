@@ -1,0 +1,64 @@
+<form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label>Username</label>
+    <input type="text" formControlName="username" class="form-control">
+  </div>
+  
+  <div class="form-group">
+    <label>Email</label>
+    <input type="text" formControlName="email" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label>Country</label>
+    <input type="text" formControlName="country" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label>County</label>
+    <input type="text" formControlName="county" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label>Area</label>
+    <input type="text" formControlName="area" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Organization</label>
+    <input type="text" formControlName="organization" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Employee Band</label>
+    <input type="text" formControlName="employeeBand" class="form-control">
+  </div>
+  <div class="form-group">
+        <label>House Type</label>
+        <input type="text" formControlName="houseType" class="form-control">
+   </div>
+  <div class="form-group">
+    <label>House Size</label>
+    <input type="text" formControlName="houseSize" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Cost</label>
+    <input type="text" formControlName="cost" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Rent</label>
+    <input type="text" formControlName="rent" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Rent Tenure</label>
+    <input type="text" formControlName="rentTenure" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Current Location</label>
+    <input type="text" formControlName="currentLocation" class="form-control">
+  </div>
+ 
+  <div class="form-group">
+    <label>Role</label>
+    <input type="text" formControlName="role" class="form-control">
+  </div>
+  <button type="submit" class="btn btn-primary"  (click)="onSubmit()">Save</button>
+</form>

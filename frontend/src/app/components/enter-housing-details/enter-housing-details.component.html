@@ -1,0 +1,58 @@
+<div class="container mt-4" >
+ 
+    <div class="card">
+            <h1>Housing Details</h1>
+     
+    <form>
+        <div class="form-group">
+          <label>Country</label>
+          <input type="text" [(ngModel)]="dataObj.country" [ngModelOptions]="{standalone: true}"  class="form-control" id="country" placeholder="Enter Country Name">
+     
+        </div>
+     
+        <div class="form-group">
+            <label>County</label>
+            <input type="text" [(ngModel)]="dataObj.county" [ngModelOptions]="{standalone: true}"  class="form-control" id="county" placeholder="Enter county">
+     
+          </div>
+     
+          <div class="form-group">
+            <label>House Type</label>
+            <input type="text" [(ngModel)]="dataObj.houseType" [ngModelOptions]="{standalone: true}" class="form-control" id="houseType" placeholder="Enter House Type">
+     
+          </div>
+ 
+          <div class="form-group">
+            <label>House Size</label>
+            <input type="text" [(ngModel)]="dataObj.houseSize" [ngModelOptions]="{standalone: true}" class="form-control" id="houseSize" placeholder="Enter House Size">
+     
+          </div>
+ 
+          <div class="form-group">
+            <label>Cost</label>
+            <input type="text" [(ngModel)]="dataObj.cost" [ngModelOptions]="{standalone: true}" class="form-control" id="cost" placeholder="Enter cost of house">
+     
+          </div>
+       
+          <div class="form-group">
+            <label>Rent</label>
+            <input type="text" [(ngModel)]="dataObj.rent" [ngModelOptions]="{standalone: true}" class="form-control" id="rent" placeholder="Enter rent of house">
+     
+          </div>
+       
+          <div class="form-group">
+            <label>Rent Tenure</label>
+            <input type="text" [(ngModel)]="dataObj.rentTenure" [ngModelOptions]="{standalone: true}" class="form-control" id="rentTenure" placeholder="Enter rent tenure of house">
+     
+          </div>
+
+          <div class="form-group">
+            <label>Rent Receipt</label>
+            <input type="file" name="recipt" (change)="onFileSelected($event)" class="form-control-file">
+          </div>  
+       
+        <button type="submit" class="btn btn-primary mt-4" (click)="detailsAdded()" >Submit</button>
+      </form>
+     
+    </div>
+    <div>

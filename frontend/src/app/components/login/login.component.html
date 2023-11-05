@@ -1,0 +1,14 @@
+<div class="container">
+  <h1 class="title">Housing-App</h1>
+  <div class="card">
+    <form>
+      <input type="text" placeholder="Username" [(ngModel)]="username" name="username">
+      <input type="text" placeholder="Email" [(ngModel)]="email" name="email">
+      <input type="password" placeholder="Password" [(ngModel)]="pwd" name="password">
+      <div class="buttons">
+        <a routerLink="/signup" class="register-link">Sign-Up</a>
+        <button type="button" class="login-button" (click)="login()">Login</button>
+      </div>
+    </form>
+  </div>
+</div>

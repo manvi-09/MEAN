@@ -1,0 +1,29 @@
+<div class="container mt-4" >
+ 
+    <div class="card">
+            <h1>SignUP</h1>
+     
+    <form>
+        <div class="form-group">
+          <label>Username</label>
+          <input type="text" [(ngModel)]="username" [ngModelOptions]="{standalone: true}"  class="form-control" id="username" placeholder="Enter User Name">
+     
+        </div>
+     
+        <div class="form-group">
+            <label>Email</label>
+            <input type="text" [(ngModel)]="email" [ngModelOptions]="{standalone: true}"  class="form-control" id="email" placeholder="Enter email">
+      
+          </div>
+      
+          <div class="form-group">
+            <label>Password</label>
+            <input type="text" [(ngModel)]="pwd" [ngModelOptions]="{standalone: true}" class="form-control" id="pwd" placeholder="Enter Password">
+      
+          </div>
+        
+        <button type="submit" class="btn btn-primary mt-4" (click)="signup()" >Submit</button>
+       <div class="test-center pt-4 text-muted"> Already Have an account? <a id= "forget" routerLink="/login" href="/login">Login</a></div>
+      </form>
+    </div>
+    <div>
