@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SignupComponent } from './components/signup/signup.component';
@@ -14,13 +15,16 @@ import { AdminDashboardComponent } from './components/admin-dashboard/admin-dash
 import { MainComponent } from './main/main.component';
 import { EditAdminComponent } from './components/edit-admin/edit-admin.component';
 import { EnterHousingDetailsComponent } from './components/enter-housing-details/enter-housing-details.component';
+import { ExcelUploadMongoComponent } from './components/excel-upload-mongo/excel-upload-mongo.component';
+import { EnrollMigrationComponent } from './employee/enroll-migration/enroll-migration.component';
 
  const routes: Routes = [
   {path : 'login', component: LoginComponent},
   {path: 'signup', component: SignupComponent},
   // {path: 'dashboard', component:DashboardComponent},
   { path: 'empDashboard', component: EmployeeDashboardComponent },
-{ path:'adminDashboard',component:AdminDashboardComponent}
+{ path:'adminDashboard',component:AdminDashboardComponent},
+{path:'uploadExcel', component: ExcelUploadMongoComponent}
 
  ];
 
@@ -34,7 +38,9 @@ import { EnterHousingDetailsComponent } from './components/enter-housing-details
     AdminDashboardComponent,
     MainComponent,
     EditAdminComponent,
-    EnterHousingDetailsComponent
+    EnterHousingDetailsComponent,
+    ExcelUploadMongoComponent,
+    EnrollMigrationComponent
   ],
   imports: [
     BrowserModule,
@@ -47,6 +53,8 @@ import { EnterHousingDetailsComponent } from './components/enter-housing-details
       cookieName: 'XSRF-TOKEN',
       headerName: 'X-XSRF-TOKEN',
     }),
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -85,6 +85,11 @@
         </tr>
     </tbody>
 </table>
+
+<button (click)="navigateToEnrollMigration()">Request</button>
+<br>
+<br>
+<br>
 <button (click)="toggleEditForm()">Edit</button>
  
 <ng-container *ngIf="showEdit">
@@ -94,8 +99,45 @@
           <input type="text" [(ngModel)]="dataObj.country" [ngModelOptions]="{standalone: true}"  class="form-control" id="country" [value]="dataObj.country">
      
         </div>
+        <div class="form-group">
+            <label>County</label>
+            <input type="text" [(ngModel)]="dataObj.county" [ngModelOptions]="{standalone: true}"  class="form-control" id="county" [value]="dataObj.county">
+       
+          </div>
+          <div class="form-group">
+            <label>Organisation</label>
+            <input type="text" [(ngModel)]="dataObj.organization" [ngModelOptions]="{standalone: true}"  class="form-control" id="organization" [value]="dataObj.organization">
+       
+          </div>
+          <div class="form-group">
+            <label>Current Location</label>
+            <input type="text" [(ngModel)]="dataObj.currentLocation" [ngModelOptions]="{standalone: true}"  class="form-control" id="currentLocation" [value]="dataObj.currentLocation">
+          </div>
+          <div class="form-group">
+            <label>House Type</label>
+            <input type="text" [(ngModel)]="dataObj.houseType" [ngModelOptions]="{standalone: true}"  class="form-control" id="houseType" [value]="dataObj.houseType">
+          </div>
+          <div class="form-group">
+            <label>House Size</label>
+            <input type="text" [(ngModel)]="dataObj.houseSize" [ngModelOptions]="{standalone: true}"  class="form-control" id="houseSize" [value]="dataObj.houseSize">
+          </div>
+          <div class="form-group">
+            <label>Cost</label>
+            <input type="text" [(ngModel)]="dataObj.cost" [ngModelOptions]="{standalone: true}"  class="form-control" id="cost" [value]="dataObj.cost">
+          </div>
+          <div class="form-group">
+            <label>Rent</label>
+            <input type="text" [(ngModel)]="dataObj.rent" [ngModelOptions]="{standalone: true}"  class="form-control" id="rent" [value]="dataObj.rent">
+          </div>
+          <div class="form-group">
+            <label>Rent Tenure</label>
+            <input type="text" [(ngModel)]="dataObj.rentTenure" [ngModelOptions]="{standalone: true}"  class="form-control" id="rentTenure" [value]="dataObj.rentTenure">
+          </div>
         <button type="submit" class="btn btn-primary mt-4" (click)="editForm()">Submit</button>
       </form>
+
+
+      
    
 </ng-container>
 <div *ngFor="let item of getObjectKeys(dataObj)">

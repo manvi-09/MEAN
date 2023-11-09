@@ -5,7 +5,10 @@ const upload = multer({ dest: 'uploads/' });
 const fs = require('fs');
 const path = require('path');
 const BulkData = require('../models/bulkData');
+const cors = require('cors');
 
+const app = express();
+app.use(cors());
 // GET all housetype data
 
 router.get('/getData/:username', (req, res) => {
@@ -65,22 +68,44 @@ router.post('/addData', (req, res) => {
   });
 
 
-  
-  router.put('/updatedata/:username',upload.single('selectedFile'), async (req, res) => {
-    
+  router.put('/updatedata/:username', upload.single('selectedFile'), async (req, res) => {
     try {
       const username = req.params.username;
       const newData = req.body;
-      const fileData = fs.readFileSync(req.file.path);
-      const fileBuffer = Buffer.from(fileData);
-      newData.selectedFile = fileBuffer;
+     
+      if (req.file) {
+        const fileData = fs.readFileSync(req.file.path);
+        const fileBuffer = Buffer.from(fileData);
+        newData.selectedFile = fileBuffer;
+      }
+ 
+      const data = await BulkData.findOneAndUpdate({ username }, newData, { new: true });
+ 
+      if (!data) {
+        return res.status(404).json({ error: 'Data not found' });
+      }
+ 
+      res.json(data);
+    } catch (error) {
+      console.error('Error updating data:', error);
+      res.status(500).json({ error: 'Error updating data' });
+    }
+  });
+
+ 
+
+  router.put('/editdata/:username', async (req, res) => {
+    try {
+      const username = req.params.username;
+      const newData = req.body;
+ 
       const data = await BulkData.findOneAndUpdate({ username }, newData, { new: true });
       console.log(data);
       if (!data) {
         console.log('I am here');
         return res.status(404).json({ error: 'Data not found' });
       }
-  
+ 
       res.json(data);
     } catch (error) {
       console.error('Error updating data:', error);
@@ -88,23 +113,23 @@ router.post('/addData', (req, res) => {
     }
   });
   //updata data
-  router.put('/updateData/:id', (req, res) => {
-    const id = req.params.id;
-    const newData = req.body;
+  // router.put('/updateData/:id', (req, res) => {
+  //   const id = req.params.id;
+  //   const newData = req.body;
  
-    BulkData.findByIdAndUpdate(id, newData, { new: true })
-      .then((data) => {
-        if (!data) {
-          return res.status(404).json({ error: 'Data not found' });
-        }
-        res.json(data);
-      })
-      .catch((error) => {
-        res.status(500).json({ error: 'Error updating housing data' });
-      });
-  });
+  //   BulkData.findByIdAndUpdate(id, newData, { new: true })
+  //     .then((data) => {
+  //       if (!data) {
+  //         return res.status(404).json({ error: 'Data not found' });
+  //       }
+  //       res.json(data);
+  //     })
+  //     .catch((error) => {
+  //       res.status(500).json({ error: 'Error updating housing data' });
+  //     });
+  // });
 
- 
+  
 module.exports = router;
 
 

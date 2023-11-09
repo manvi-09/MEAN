@@ -37,12 +37,15 @@ export class LoginComponent {
         sessionStorage.setItem('role', resultData.role);
         alert("Logged in Successfully");
         if(resultData.role==='employee'){
+          
           if(resultData.country!=undefined){
         this.router.navigate(['/empDashboard']);}
          else{
           this.router.navigate(['/enterHousingDetails']);
+          // this.router.navigateByUrl('uploadExcel');
          }
-      }
+        
+        }
         else if (resultData.role === 'admin') {
           this.router.navigate(['/adminDashboard']);
         }else {

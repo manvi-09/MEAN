@@ -66,7 +66,8 @@ export class EnterHousingDetailsComponent {
     this.employeeService.updateData(this.dataObj.username,formData).subscribe(
       ()=> {
         alert("data updated !!!");
-        console.log('Image uploaded successfully');
+        alert('Image uploaded successfully');
+        
       }
     )
   }

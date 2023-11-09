@@ -8,6 +8,9 @@ import { AdminDashboardComponent } from './components/admin-dashboard/admin-dash
 import { MainComponent } from './main/main.component';
 import { EditAdminComponent } from './components/edit-admin/edit-admin.component';
 import { EnterHousingDetailsComponent } from './components/enter-housing-details/enter-housing-details.component';
+import { ExcelUploadMongoComponent } from './components/excel-upload-mongo/excel-upload-mongo.component';
+import { EnrollMigrationComponent } from './employee/enroll-migration/enroll-migration.component';
+
 
 
 const routes: Routes = [
@@ -21,6 +24,8 @@ const routes: Routes = [
   { path: 'adminDashboard', component: AdminDashboardComponent },
   { path: 'edit-admin', component: EditAdminComponent },
   { path: 'enterHousingDetails', component: EnterHousingDetailsComponent },
+  {path:'uploadExcel', component:ExcelUploadMongoComponent},
+  {path:'enrollMigration', component: EnrollMigrationComponent}
    
 ];
 

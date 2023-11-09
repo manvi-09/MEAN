@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Migration Request</title>
+</head>
+<body>
+  <h1>May your home know joy !!!</h1>
+  <h2>Want to migrate............</h2>
+
+  <!-- <form action="/submit" method="POST">
+    <label for="fromCountry">From:</label>
+    <input type="text" id="fromCountry" name="fromCountry" required>
+
+    <label for="toCountry">To:</label>
+    <input type="text" id="toCountry" name="toCountry" required>
+
+    <button type="submit">Submit</button>
+  </form> -->
+  <form (ngSubmit)="submitForm()">
+    <label for="fromCountry">From:</label>
+    <input type="text" id="fromC" name="fromC" [(ngModel)]="fromC" required>
+  
+    <label for="toCountry">To:</label>
+    <input type="text" id="toC" name="toC" [(ngModel)]="toC" required>
+  
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>

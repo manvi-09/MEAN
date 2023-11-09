@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { EmployeeService } from 'src/app/services/bulk-data.service';
 import {HttpClient, HttpHeaders } from '@angular/common/http';
 import { saveAs } from 'file-saver';
+import { Router } from '@angular/router';
+import { formatDate } from '@angular/common';
 
 
 @Component({
@@ -33,15 +35,14 @@ export class EmployeeDashboardComponent implements OnInit {
   };
   showEdit:boolean=false;
   routes: any;
-  router: any;
-  constructor(private employeeService: EmployeeService,private http: HttpClient) {}
+  constructor(private employeeService: EmployeeService,private http: HttpClient,private router: Router) {}
 
    ngOnInit(): void 
    {
     this.username=sessionStorage.getItem('username')
     debugger
     // console.log(this.username);
-    this.http.get(`http://localhost:3000/api/bulkData/getData/${this.username}`).subscribe(
+    this.http.get(`http://localhost:3000/api/bulkData/getdata/${this.username}`).subscribe(
       (result)=>{
         this.dataObj=result
         // console.log(result._id);
@@ -59,7 +60,7 @@ export class EmployeeDashboardComponent implements OnInit {
   enterHousing(): void
   {
     if (this.dataObj.country===undefined){
-      this.router.navigate("/enterHousingDetails");
+      this.routes.navigate("/enterHousingDetails");
     }
   }
  
@@ -68,12 +69,46 @@ export class EmployeeDashboardComponent implements OnInit {
     debugger
     this.showEdit = !this.showEdit
   }
+
+  onFileInputChange(event: any): void {
+    const file = event.target.files[0];
+    this.dataObj.selectedFile = file;
+  }
  
+  // editForm(): void
+  // {
+  //   const formData = new FormData();
+    
+  //   formData.append('username', this.dataObj.username);
+  //   if (this.dataObj.selectedFile) {
+  //     formData.append('selectedFile', this.dataObj.selectedFile, this.dataObj.selectedFile.name);
+  //   }
+  //   formData.append('organization', this.dataObj.organization);
+  //   formData.append('employeeBand', this.dataObj.employeeBand);
+  //   formData.append('currentLocation', this.dataObj.currentLocation);
+  //   formData.append('country', this.dataObj.country);
+  //   formData.append('county', this.dataObj.county);
+  //   formData.append('area', this.dataObj.area);
+  //   formData.append('houseType', this.dataObj.houseType);
+  //   formData.append('houseSize', this.dataObj.houseSize);
+  //   formData.append('cost', this.dataObj.cost);
+  //   formData.append('rent', this.dataObj.rent);
+  //   formData.append('rentTenure', this.dataObj.rentTenure);
+   
+  //   // console.log(this.dataObj.country);
+  //   this.employeeService.updateData(this.dataObj.username,formData).subscribe(
+  //     ()=> {
+  //       alert("data updated !!!");
+  //     }
+  //   )
+  // }
+
   editForm(): void
   {
+    debugger
     const formData = new FormData();
+    
     formData.append('username', this.dataObj.username);
-    formData.append('selectedFile', this.dataObj.selectedFile, this.dataObj.selectedFile.name);
     formData.append('organization', this.dataObj.organization);
     formData.append('employeeBand', this.dataObj.employeeBand);
     formData.append('currentLocation', this.dataObj.currentLocation);
@@ -87,7 +122,7 @@ export class EmployeeDashboardComponent implements OnInit {
     formData.append('rentTenure', this.dataObj.rentTenure);
    
     console.log(this.dataObj.country);
-    this.employeeService.updateData(this.dataObj.userName,formData).subscribe(
+    this.employeeService.updateData(this.dataObj.username,formData).subscribe(
       ()=> {
         alert("data updated !!!");
       }
@@ -102,7 +137,7 @@ export class EmployeeDashboardComponent implements OnInit {
           const url = window.URL.createObjectURL(blob);
         const link = document.createElement('a');
         link.href = url;
-        link.download = 'image.jpeg';
+        link.download = 'image.jpg';
 
         // Programmatically click the link to trigger the download
         link.click();
@@ -117,4 +152,8 @@ export class EmployeeDashboardComponent implements OnInit {
   {
     return Object.keys(obj);
   } 
+
+  navigateToEnrollMigration() {
+    this.router.navigate(['/enrollMigration']);
+  }
 }

@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { BulkDataService } from './bulk-data.service';
+import {BulkDataService} from './bulk-data.service';
 
 describe('BulkDataService', () => {
   let service: BulkDataService;

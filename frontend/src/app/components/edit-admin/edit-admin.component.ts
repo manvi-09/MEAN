@@ -47,26 +47,25 @@ export class EditAdminComponent implements OnInit {
 
   onSubmit(): void {
 
-    const formData = new FormData();
-    formData.append('username',this.employee.username);
-    formData.append('selectedFile', this.employee.selectedFile);
-    formData.append('organization', this.employee.organization);
-    formData.append('employeeBand', this.employee.employeeBand);
-    formData.append('currentLocation', this.employee.currentLocation);
-    formData.append('country', this.employee.country);
-    formData.append('county', this.employee.county);
-    formData.append('area', this.employee.area);
-    formData.append('houseType', this.employee.houseType);
-    formData.append('houseSize', this.employee.houseSize);
-    formData.append('cost', this.employee.cost);
-    formData.append('rent', this.employee.rent);
-    formData.append('rentTenure', this.employee.rentTenure);
-    
-    console.log(this.editForm.value);
-    this.employeeService.updateData( this.editForm.value,formData).subscribe(() => {
-      alert('data updated !!!');
-      
-    });
+    // const formData = new FormData();
+    // formData.append('username',this.employee.username);
+    // formData.append('selectedFile', this.employee.selectedFile);
+    // formData.append('organization', this.employee.organization);
+    // formData.append('employeeBand', this.employee.employeeBand);
+    // formData.append('currentLocation', this.employee.currentLocation);
+    // formData.append('country', this.employee.country);
+    // formData.append('county', this.employee.county);
+    // formData.append('area', this.employee.area);
+    // formData.append('houseType', this.employee.houseType);
+    // formData.append('houseSize', this.employee.houseSize);
+    // formData.append('cost', this.employee.cost);
+    // formData.append('rent', this.employee.rent);
+    // formData.append('rentTenure', this.employee.rentTenure);
 
+    console.log(this.editForm.value);
+    this.employeeService.editData( this.editForm.value).subscribe(() => {
+      alert('data updated !!!');
+     
+    });
   }
 }

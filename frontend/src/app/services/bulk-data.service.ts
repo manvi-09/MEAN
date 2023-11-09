@@ -26,8 +26,15 @@ export class EmployeeService {
   
 
   updateData(username: string,formData:FormData) {
-    const url = `http://localhost:3000/api/bulkdata/updateData/${username}`;
+    const url = `http://localhost:3000/api/bulkdata/updatedata/${username}`;
     return this.http.put(url, formData);
+  }
+
+
+
+  editData(data:any) {
+    const url = `http://localhost:3000/api/bulkdata/editData/${data.username}`;
+    return this.http.put(url,data);
   }
   
 }

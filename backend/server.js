@@ -26,6 +26,9 @@ app.use((req, res, next) => {
   next();
 });
 
+const uploadExcelFile = require('./routes/uploadExcelFileRoute');
+app.use('/api', uploadExcelFile);
+
 const route_housing = require('./routes/housingDataRoutes')
 app.use('/api/housingData' , route_housing)
 
@@ -52,6 +55,9 @@ app.use('/api/empcreds' , route_empcreds)
 
 const route_bulkdata = require('./routes/bulkDataRoutes')
 app.use('/api/bulkdata' , route_bulkdata)
+
+const route_enrollmigration = require('./routes/enrollMigrationRoutes')
+app.use('/api/enrollmigration' , route_enrollmigration)
 
 // Connect to MongoDB
 mongoose.connect('mongodb://localhost:27017/housingApp', { useNewUrlParser: true, useUnifiedTopology: true })
